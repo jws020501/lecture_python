@@ -1,4 +1,4 @@
-# (숙제) stack연산음 함수로 구현
+# (숙제) stack연산을 함수로 구현
 stack = [] 
 capacity = 5
 def push(data):
