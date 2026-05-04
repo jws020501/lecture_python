@@ -2,7 +2,7 @@ import random
 limit = 100
 
 def guess_number():
-    number = random.randint(1, limit+1)
+    number = random.randint(1, limit)
     print(f"숫자를 맞춰보세요! (1-{limit})")
 
     for i in range(1,8):
