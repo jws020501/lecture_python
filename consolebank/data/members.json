@@ -1,0 +1,12 @@
+{
+    "admin": {
+        "id": "admin",
+        "password": "1234",
+        "name": "관리자"
+    },
+    "jws020501": {
+        "id": "jws020501",
+        "password": "asd123",
+        "name": "조원석"
+    }
+}

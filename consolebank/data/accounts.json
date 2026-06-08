@@ -1,0 +1,20 @@
+{
+    "111111": {
+        "account_no": "111111",
+        "owner": "jws020501",
+        "balance": 50000,
+        "password": "1234"
+    },
+    "111112": {
+        "account_no": "111112",
+        "owner": "jws020501",
+        "balance": 0,
+        "password": "1234"
+    },
+    "111113": {
+        "account_no": "111113",
+        "owner": "jws020501",
+        "balance": 0,
+        "password": "1234"
+    }
+}
