@@ -1,0 +1,184 @@
+<svg viewBox="0 0 1020 760" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', monospace">
+  <title>온라인 서점 클래스 다이어그램 (코드 기준 정확본)</title>
+  <desc>BookStore, Service, DAO, Entity 4계층 클래스와 정확한 관계</desc>
+  <rect x="0" y="0" width="1020" height="760" fill="#ffffff"/>
+
+  <defs>
+    <marker id="assoc2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#444"/>
+    </marker>
+    <marker id="comp2" markerWidth="14" markerHeight="14" refX="1" refY="5" orient="auto">
+      <path d="M0,5 L5,1 L10,5 L5,9 z" fill="#444"/>
+    </marker>
+    <marker id="aggr2" markerWidth="14" markerHeight="14" refX="1" refY="5" orient="auto">
+      <path d="M0,5 L5,1 L10,5 L5,9 z" fill="white" stroke="#444" stroke-width="1.2"/>
+    </marker>
+    <marker id="dep2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#999" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <text x="510" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a2e">온라인 서점 시스템 — 클래스 다이어그램</text>
+  <text x="510" y="40" text-anchor="middle" font-size="10" fill="#888">Controller → Service → DAO → Entity (4계층 구조)</text>
+
+  <!-- BookStore (Controller) -->
+  <rect x="380" y="55" width="250" height="180" rx="4" fill="#e8f5e9" stroke="#4CAF50" stroke-width="2"/>
+  <rect x="380" y="55" width="250" height="26" rx="4" fill="#4CAF50"/>
+  <text x="505" y="73" text-anchor="middle" font-size="13" font-weight="bold" fill="white">BookStore  «Controller»</text>
+  <line x1="380" y1="81" x2="630" y2="81" stroke="#4CAF50" stroke-width="1"/>
+  <text x="388" y="96" font-size="9.5" fill="#1a1a2e">- book_id : int</text>
+  <text x="388" y="110" font-size="9.5" fill="#1a1a2e">- member_service : MemberService</text>
+  <text x="388" y="124" font-size="9.5" fill="#1a1a2e">- book_service : BookService</text>
+  <text x="388" y="138" font-size="9.5" fill="#1a1a2e">- *_menu_list : list[str]</text>
+  <line x1="380" y1="145" x2="630" y2="145" stroke="#4CAF50" stroke-width="1"/>
+  <text x="388" y="160" font-size="9.5" fill="#333">+ run() / show_menu() / login_menu() / join_menu()</text>
+  <text x="388" y="174" font-size="9.5" fill="#333">+ admin_menu() / admin_member_management()</text>
+  <text x="388" y="188" font-size="9.5" fill="#333">+ admin_book_management() / book_insert_info()…</text>
+  <text x="388" y="202" font-size="9.5" fill="#333">+ member_menu() / member_book_selection()</text>
+  <text x="388" y="216" font-size="9.5" fill="#333">+ member_cart() / show_order_history()</text>
+  <text x="388" y="230" font-size="9.5" fill="#333">+ member_mypage() / menu_update_password()</text>
+
+  <!-- BookService -->
+  <rect x="55" y="300" width="225" height="150" rx="4" fill="#f3e5f5" stroke="#9C27B0" stroke-width="2"/>
+  <rect x="55" y="300" width="225" height="26" rx="4" fill="#9C27B0"/>
+  <text x="167" y="318" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">BookService</text>
+  <line x1="55" y1="326" x2="280" y2="326" stroke="#9C27B0" stroke-width="1"/>
+  <text x="63" y="341" font-size="9.5" fill="#1a1a2e">- __DAO : BookDAO</text>
+  <line x1="55" y1="349" x2="280" y2="349" stroke="#9C27B0" stroke-width="1"/>
+  <text x="63" y="364" font-size="9.5" fill="#333">+ __init__(bookDAO)</text>
+  <text x="63" y="378" font-size="9.5" fill="#333">+ insert_book(book) : bool</text>
+  <text x="63" y="392" font-size="9.5" fill="#333">+ get_book_list() : list</text>
+  <text x="63" y="406" font-size="9.5" fill="#333">+ get_book_info(book_id) : Book</text>
+  <text x="63" y="420" font-size="9.5" fill="#333">+ update_book_info(book) : bool</text>
+  <text x="63" y="434" font-size="9.5" fill="#333">+ remove_book(book_id) : bool</text>
+
+  <!-- MemberService -->
+  <rect x="730" y="300" width="240" height="195" rx="4" fill="#f3e5f5" stroke="#9C27B0" stroke-width="2"/>
+  <rect x="730" y="300" width="240" height="26" rx="4" fill="#9C27B0"/>
+  <text x="850" y="318" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">MemberService</text>
+  <line x1="730" y1="326" x2="970" y2="326" stroke="#9C27B0" stroke-width="1"/>
+  <text x="738" y="341" font-size="9.5" fill="#1a1a2e">- __DAO : MemberDAO</text>
+  <text x="738" y="355" font-size="9.5" fill="#9b1a00">+ ADMIN_ID : str = 'admin'</text>
+  <text x="738" y="369" font-size="9.5" fill="#9b1a00">+ ADMIN_PASSWORD : str = '1234'</text>
+  <text x="738" y="383" font-size="9.5" fill="#1a1a2e">+ current_user : Member | None</text>
+  <line x1="730" y1="391" x2="970" y2="391" stroke="#9C27B0" stroke-width="1"/>
+  <text x="738" y="406" font-size="9.5" fill="#333">+ join(member) : bool</text>
+  <text x="738" y="420" font-size="9.5" fill="#333">+ login(id, password) : str | None</text>
+  <text x="738" y="434" font-size="9.5" fill="#333">+ logout() / list_member() / is_valid_id(id)</text>
+  <text x="738" y="448" font-size="9.5" fill="#333">+ update_address(id, new_address) : bool</text>
+  <text x="738" y="462" font-size="9.5" fill="#333">+ update_password(member, org, new) : bool</text>
+  <text x="738" y="476" font-size="9.5" fill="#333">+ delete_account(id) : bool</text>
+
+  <!-- BookDAO -->
+  <rect x="55" y="510" width="225" height="180" rx="4" fill="#fff3e0" stroke="#FF9800" stroke-width="2"/>
+  <rect x="55" y="510" width="225" height="26" rx="4" fill="#FF9800"/>
+  <text x="167" y="528" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">BookDAO</text>
+  <line x1="55" y1="536" x2="280" y2="536" stroke="#FF9800" stroke-width="1"/>
+  <text x="63" y="551" font-size="9.5" fill="#9b5e00">+ BOOK_DB_FILE : str  «classvar»</text>
+  <text x="63" y="565" font-size="9.5" fill="#1a1a2e">- __bookDB : dict[int, Book]</text>
+  <line x1="55" y1="573" x2="280" y2="573" stroke="#FF9800" stroke-width="1"/>
+  <text x="63" y="588" font-size="9.5" fill="#333">+ insert_book(book) : bool</text>
+  <text x="63" y="602" font-size="9.5" fill="#333">+ get_all_books() : list</text>
+  <text x="63" y="616" font-size="9.5" fill="#333">+ get_book_info(book_id) : Book</text>
+  <text x="63" y="630" font-size="9.5" fill="#333">+ update_book(book) : bool</text>
+  <text x="63" y="644" font-size="9.5" fill="#333">+ delete_book(book_id) : bool</text>
+  <text x="63" y="658" font-size="9.5" fill="#333">+ is_exist(book_id) : bool / save_bookDB()</text>
+  <text x="63" y="672" font-size="9.5" fill="#555">- __load_bookDB() : dict</text>
+
+  <!-- MemberDAO -->
+  <rect x="730" y="540" width="240" height="195" rx="4" fill="#fff3e0" stroke="#FF9800" stroke-width="2"/>
+  <rect x="730" y="540" width="240" height="26" rx="4" fill="#FF9800"/>
+  <text x="850" y="558" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">MemberDAO</text>
+  <line x1="730" y1="566" x2="970" y2="566" stroke="#FF9800" stroke-width="1"/>
+  <text x="738" y="581" font-size="9.5" fill="#9b5e00">+ MEMBER_DB_FILE : str  «classvar»</text>
+  <text x="738" y="595" font-size="9.5" fill="#1a1a2e">- __memberDB : list[Member]</text>
+  <line x1="730" y1="603" x2="970" y2="603" stroke="#FF9800" stroke-width="1"/>
+  <text x="738" y="618" font-size="9.5" fill="#333">+ insert_member(member) : bool</text>
+  <text x="738" y="632" font-size="9.5" fill="#333">+ get_member_info(id) : Member</text>
+  <text x="738" y="646" font-size="9.5" fill="#333">+ get_all_members() : list / is_exist(id)</text>
+  <text x="738" y="660" font-size="9.5" fill="#333">+ delete_member(id) : bool</text>
+  <text x="738" y="674" font-size="9.5" fill="#333">+ update_member_address(id, addr) : bool</text>
+  <text x="738" y="688" font-size="9.5" fill="#333">+ update_member_password(id, org, new)</text>
+  <text x="738" y="702" font-size="9.5" fill="#333">+ save_memberDB() / update_memberDB()</text>
+  <text x="738" y="716" font-size="9.5" fill="#555">- __load_memberDB() : list</text>
+
+  <!-- Book (Entity) -->
+  <rect x="330" y="540" width="200" height="180" rx="4" fill="#e8f4f8" stroke="#4361ee" stroke-width="2"/>
+  <rect x="330" y="540" width="200" height="26" rx="4" fill="#4361ee"/>
+  <text x="430" y="558" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">Book  «Entity»</text>
+  <line x1="330" y1="566" x2="530" y2="566" stroke="#4361ee" stroke-width="1"/>
+  <text x="338" y="581" font-size="9.5" fill="#1a1a2e">- __book_id : int</text>
+  <text x="338" y="595" font-size="9.5" fill="#1a1a2e">- __title : str</text>
+  <text x="338" y="609" font-size="9.5" fill="#1a1a2e">- __author : str</text>
+  <text x="338" y="623" font-size="9.5" fill="#1a1a2e">- __price : int</text>
+  <text x="338" y="637" font-size="9.5" fill="#1a1a2e">- __stock : int</text>
+  <text x="338" y="651" font-size="9.5" fill="#1a1a2e">- __publisher : str</text>
+  <line x1="330" y1="659" x2="530" y2="659" stroke="#4361ee" stroke-width="1"/>
+  <text x="338" y="674" font-size="9.5" fill="#333">+ get_book_id/title/author()</text>
+  <text x="338" y="688" font-size="9.5" fill="#333">+ get_price/stock/publisher()</text>
+  <text x="338" y="702" font-size="9.5" fill="#333">+ set_title/author/price/stock/publisher()</text>
+  <text x="338" y="716" font-size="9.5" fill="#333">+ __str__()</text>
+
+  <!-- Member (Entity) -->
+  <rect x="55" y="55" width="270" height="210" rx="4" fill="#e3f2fd" stroke="#2196F3" stroke-width="2"/>
+  <rect x="55" y="55" width="270" height="26" rx="4" fill="#2196F3"/>
+  <text x="190" y="73" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">Member  «Entity»</text>
+  <line x1="55" y1="81" x2="325" y2="81" stroke="#2196F3" stroke-width="1"/>
+  <text x="63" y="96" font-size="9.5" fill="#1a1a2e">- __id : str</text>
+  <text x="63" y="110" font-size="9.5" fill="#1a1a2e">- __password : str</text>
+  <text x="63" y="124" font-size="9.5" fill="#1a1a2e">- __name : str</text>
+  <text x="63" y="138" font-size="9.5" fill="#1a1a2e">- __address : str</text>
+  <text x="63" y="152" font-size="9.5" fill="#1a1a2e">- __cart : list[CartItem]</text>
+  <text x="63" y="166" font-size="9.5" fill="#1a1a2e">- __order_list : list[dict]</text>
+  <line x1="55" y1="174" x2="325" y2="174" stroke="#2196F3" stroke-width="1"/>
+  <text x="63" y="189" font-size="9.5" fill="#333">+ get_id/password/name/address()</text>
+  <text x="63" y="203" font-size="9.5" fill="#333">+ get_cart() : list / get_order_list() : list</text>
+  <text x="63" y="217" font-size="9.5" fill="#333">+ set_password(password)</text>
+  <text x="63" y="231" font-size="9.5" fill="#333">+ set_address(address)</text>
+  <text x="63" y="245" font-size="9.5" fill="#333">+ clear_cart()</text>
+  <text x="63" y="259" font-size="9.5" fill="#333">+ __str__()</text>
+
+  <!-- CartItem (Entity) -->
+  <rect x="690" y="80" width="230" height="135" rx="4" fill="#e8f4f8" stroke="#4361ee" stroke-width="2"/>
+  <rect x="690" y="80" width="230" height="26" rx="4" fill="#4361ee"/>
+  <text x="805" y="98" text-anchor="middle" font-size="12.5" font-weight="bold" fill="white">CartItem  «Entity»</text>
+  <line x1="690" y1="106" x2="920" y2="106" stroke="#4361ee" stroke-width="1"/>
+  <text x="698" y="121" font-size="9.5" fill="#1a1a2e">- __book : Book</text>
+  <text x="698" y="135" font-size="9.5" fill="#1a1a2e">- __quantity : int</text>
+  <line x1="690" y1="143" x2="920" y2="143" stroke="#4361ee" stroke-width="1"/>
+  <text x="698" y="158" font-size="9.5" fill="#333">+ get_book() : Book</text>
+  <text x="698" y="172" font-size="9.5" fill="#333">+ get_quantity() : int</text>
+  <text x="698" y="186" font-size="9.5" fill="#333">+ set_quantity(quantity)</text>
+
+  <!-- RELATIONSHIPS -->
+  <path d="M 380 175 L 167 300" fill="none" stroke="#444" stroke-width="1.6" marker-start="url(#comp2)"/>
+  <text x="232" y="240" font-size="9" fill="#555" transform="rotate(-32 232 240)">◆ 생성·보유 1</text>
+  <path d="M 630 175 L 850 300" fill="none" stroke="#444" stroke-width="1.6" marker-start="url(#comp2)"/>
+  <text x="745" y="238" font-size="9" fill="#555" transform="rotate(32 745 238)">◆ 생성·보유 1</text>
+  <path d="M 167 450 L 167 510" fill="none" stroke="#444" stroke-width="1.6" marker-start="url(#aggr2)"/>
+  <text x="172" y="485" font-size="9" fill="#555">◇ 주입 1</text>
+  <path d="M 850 495 L 850 540" fill="none" stroke="#444" stroke-width="1.6" marker-start="url(#aggr2)"/>
+  <text x="855" y="522" font-size="9" fill="#555">◇ 주입 1</text>
+  <path d="M 280 600 L 330 600" fill="none" stroke="#444" stroke-width="1.4" marker-end="url(#assoc2)"/>
+  <text x="285" y="594" font-size="9" fill="#555">0..*</text>
+  <path d="M 730 590 Q 480 400 325 200" fill="none" stroke="#444" stroke-width="1.4" marker-end="url(#assoc2)"/>
+  <text x="540" y="400" font-size="9" fill="#555">관리 0..*</text>
+  <path d="M 325 130 L 690 130" fill="none" stroke="#444" stroke-width="1.6" marker-start="url(#comp2)"/>
+  <text x="470" y="124" font-size="9" fill="#555">◆ __cart  0..*</text>
+  <path d="M 805 215 Q 720 420 530 600" fill="none" stroke="#444" stroke-width="1.4" marker-end="url(#assoc2)"/>
+  <text x="700" y="430" font-size="9" fill="#555">참조 1</text>
+  <path d="M 505 235 L 460 540" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#dep2)"/>
+  <text x="468" y="380" font-size="8.5" fill="#999" font-style="italic" transform="rotate(81 468 380)">«create» Book·Member·CartItem</text>
+
+  <!-- LEGEND -->
+  <rect x="330" y="270" width="360" height="60" rx="5" fill="#fafafa" stroke="#ddd" stroke-width="1"/>
+  <text x="340" y="287" font-size="10.5" font-weight="bold" fill="#333">관계 범례</text>
+  <path d="M 340 300 l 24 0" stroke="#444" stroke-width="1.6" marker-start="url(#comp2)"/>
+  <text x="372" y="303" font-size="9" fill="#333">Composition(생성·소유)</text>
+  <path d="M 512 300 l 24 0" stroke="#444" stroke-width="1.6" marker-start="url(#aggr2)"/>
+  <text x="544" y="303" font-size="9" fill="#333">Aggregation(주입)</text>
+  <path d="M 340 318 l 24 0" stroke="#444" stroke-width="1.4" marker-end="url(#assoc2)"/>
+  <text x="372" y="321" font-size="9" fill="#333">Association(참조)</text>
+  <path d="M 512 318 l 24 0" stroke="#999" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#dep2)"/>
+  <text x="544" y="321" font-size="9" fill="#333">Dependency(생성 의존)</text>
+</svg>
