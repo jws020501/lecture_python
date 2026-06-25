@@ -1,0 +1,319 @@
+{
+  "user_id": 14,
+  "course_id": 10,
+  "lecture_id": 11,
+  "order_id": 5,
+  "review_id": 4,
+  "question_id": 4,
+  "users": [
+    {
+      "id": 1,
+      "login_id": "admin",
+      "password": "admin1234",
+      "name": "관리자",
+      "role": "관리자",
+      "phone": "010-0000-0000",
+      "email": "admin@market.com"
+    },
+    {
+      "id": 2,
+      "login_id": "teacher",
+      "password": "teacher1234",
+      "name": "김강사",
+      "role": "강사",
+      "phone": "010-1111-2222",
+      "email": "teacher@market.com"
+    },
+    {
+      "id": 3,
+      "login_id": "student",
+      "password": "student1234",
+      "name": "이수강",
+      "role": "수강생",
+      "phone": "010-3333-4444",
+      "email": "student@market.com"
+    },
+    {
+      "id": 4,
+      "login_id": "user4",
+      "password": "1234",
+      "name": "관리자",
+      "role": "관리자",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 5,
+      "login_id": "user5",
+      "password": "1234",
+      "name": "김강사",
+      "role": "강사",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 6,
+      "login_id": "user6",
+      "password": "1234",
+      "name": "이수강",
+      "role": "수강생",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 7,
+      "login_id": "user7",
+      "password": "1234",
+      "name": "관리자",
+      "role": "관리자",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 8,
+      "login_id": "user8",
+      "password": "1234",
+      "name": "김강사",
+      "role": "강사",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 9,
+      "login_id": "user9",
+      "password": "1234",
+      "name": "이수강",
+      "role": "수강생",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 10,
+      "login_id": "user10",
+      "password": "1234",
+      "name": "관리자",
+      "role": "관리자",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 11,
+      "login_id": "user11",
+      "password": "1234",
+      "name": "김강사",
+      "role": "강사",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 12,
+      "login_id": "user12",
+      "password": "1234",
+      "name": "이수강",
+      "role": "수강생",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 13,
+      "login_id": "jws020501",
+      "password": "1234",
+      "name": "조원석",
+      "role": "관리자",
+      "phone": "1234",
+      "email": "1234"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "파이썬 기초 문법",
+      "category": "프로그래밍",
+      "price": 30000,
+      "instructor_id": 2,
+      "status": "승인완료",
+      "lectures": [
+        {
+          "id": 1,
+          "title": "변수와 자료형"
+        },
+        {
+          "id": 2,
+          "title": "조건문과 반복문"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "콘솔 쇼핑몰 만들기",
+      "category": "프로젝트",
+      "price": 45000,
+      "instructor_id": 2,
+      "status": "승인완료",
+      "lectures": [
+        {
+          "id": 3,
+          "title": "메뉴 설계"
+        },
+        {
+          "id": 4,
+          "title": "파일 저장 구현"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "자료구조 입문",
+      "category": "컴퓨터공학",
+      "price": 40000,
+      "instructor_id": 2,
+      "status": "승인대기",
+      "lectures": [
+        {
+          "id": 5,
+          "title": "리스트와 딕셔너리"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "파이썬 기초",
+      "category": "프로그래밍",
+      "price": 30000,
+      "instructor_id": 5,
+      "status": "승인완료",
+      "lectures": [
+        {
+          "id": 6,
+          "title": "변수와 조건문"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "파이썬 기초",
+      "category": "프로그래밍",
+      "price": 30000,
+      "instructor_id": 8,
+      "status": "승인완료",
+      "lectures": [
+        {
+          "id": 7,
+          "title": "변수와 조건문"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "파이썬 기초",
+      "category": "프로그래밍",
+      "price": 30000,
+      "instructor_id": 11,
+      "status": "승인완료",
+      "lectures": [
+        {
+          "id": 8,
+          "title": "변수와 조건문"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "테스트강의",
+      "category": "테스트",
+      "price": 15000,
+      "instructor_id": 2,
+      "status": "승인완료",
+      "lectures": [
+        {
+          "id": 10,
+          "title": "테스트강의 시작"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "student_id": 6,
+      "course_id": 4,
+      "price": 30000,
+      "progress": {
+        "6": true
+      }
+    },
+    {
+      "id": 2,
+      "student_id": 9,
+      "course_id": 5,
+      "price": 30000,
+      "progress": {
+        "7": true
+      }
+    },
+    {
+      "id": 3,
+      "student_id": 12,
+      "course_id": 6,
+      "price": 30000,
+      "progress": {
+        "8": true
+      }
+    },
+    {
+      "id": 4,
+      "student_id": 3,
+      "course_id": 9,
+      "price": 15000,
+      "progress": {
+        "10": true
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "student_id": 6,
+      "course_id": 4,
+      "score": 5,
+      "content": "설명이 쉽습니다."
+    },
+    {
+      "id": 2,
+      "student_id": 9,
+      "course_id": 5,
+      "score": 5,
+      "content": "설명이 쉽습니다."
+    },
+    {
+      "id": 3,
+      "student_id": 12,
+      "course_id": 6,
+      "score": 5,
+      "content": "설명이 쉽습니다."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "student_id": 6,
+      "course_id": 4,
+      "content": "반복문은 언제 쓰나요?",
+      "answer": "같은 작업을 여러 번 반복할 때 사용합니다."
+    },
+    {
+      "id": 2,
+      "student_id": 9,
+      "course_id": 5,
+      "content": "반복문은 언제 쓰나요?",
+      "answer": "같은 작업을 여러 번 반복할 때 사용합니다."
+    },
+    {
+      "id": 3,
+      "student_id": 12,
+      "course_id": 6,
+      "content": "반복문은 언제 쓰나요?",
+      "answer": "같은 작업을 여러 번 반복할 때 사용합니다."
+    }
+  ]
+}
