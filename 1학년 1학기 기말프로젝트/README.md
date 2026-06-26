@@ -1,7 +1,7 @@
 # 온라인 강의 판매서비스 py로직구현 
 
 --- 
-ppt : https://docs.google.com/presentation/d/11o2fqVLYPzHFduLMsrCsatmJ0p3kiZv5g8yR98VVbCo/edit?slide=id.p12#slide=id.p1 
+ppt : https://docs.google.com/presentation/d/11o2fqVLYPzHFduLMsrCsatmJ0p3kiZv5g8yR98VVbCo/edit?usp=drivesdk
 
 ---
 ## 요구사항정의서
